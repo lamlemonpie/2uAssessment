@@ -24,10 +24,12 @@ export class InvoicesService {
     return this.invoicesRepo.find({ where: { id } });
   }
 
-  create(body: CreateInvoiceDto) {
+  async create(body: CreateInvoiceDto) {
     const newInvoice = this.invoicesRepo.create(body);
-
-    return this.invoicesRepo.save(newInvoice);
+    await this.invoicesRepo.save(newInvoice);
+    return {
+      message: 'invoice submitted successfully',
+    };
   }
 
   async update(id: number, body: UpdateInvoiceDto) {
