@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { AppGateway } from 'src/app.gateway';
 import { Repository } from 'typeorm';
 import { CreateInvoiceDto } from '../dtos/create-invoice.dto';
 import { UpdateInvoiceDto } from '../dtos/update-invoice.dto';
@@ -10,6 +11,7 @@ import { Invoice } from '../entities/invoice.entity';
 export class InvoicesService {
   constructor(
     @InjectRepository(Invoice) private invoicesRepo: Repository<Invoice>,
+    private appGateway: AppGateway,
   ) {}
 
   findAll() {
@@ -29,7 +31,8 @@ export class InvoicesService {
 
   async create(body: CreateInvoiceDto) {
     const newInvoice = this.invoicesRepo.create(body);
-    await this.invoicesRepo.save(newInvoice);
+    const savedInvoice = await this.invoicesRepo.save(newInvoice);
+    this.appGateway.server.emit('INVOICE_CREATED', savedInvoice);
     return {
       message: 'invoice submitted successfully',
     };

@@ -18,7 +18,6 @@ import { SocketModule } from './socket/socket.module';
       retryDelay: 3000,
       retryAttempts: 10,
     }),
-
     SocketModule,
     InvoicesModule,
   ],

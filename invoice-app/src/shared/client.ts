@@ -4,8 +4,13 @@ const headers = {
 
 const jsonFetch = async (endpoint: string, config: Record<string, unknown>) => {
   const response = await fetch(endpoint, config);
-  const JSON = await response.json();
-  return JSON;
+  const response_decoded = await response.json();
+  if (response.ok) {
+    const JSON = response_decoded;
+    return JSON;
+  } else {
+    throw response_decoded;
+  }
 };
 
 async function client(
@@ -18,11 +23,8 @@ async function client(
     headers: headers,
     body: bodyData ? JSON.stringify(bodyData) : undefined,
   };
-  try {
-    return await jsonFetch(endpoint, config);
-  } catch (error: unknown) {
-    console.error(error);
-  }
+
+  return jsonFetch(endpoint, config);
 }
 
 export default client;
