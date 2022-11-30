@@ -23,7 +23,6 @@ $ npm install
 
 ### Running database migrations
 ```bash
-$ npm run migration:generate
 $ npm run migration:up
 ```
 
@@ -40,6 +39,10 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 ## Optional steps
+To generate migrations
+```bash
+$ npm run migration:generate
+```
 To check if the image is running
 ```bash
 $ docker-compose ps
