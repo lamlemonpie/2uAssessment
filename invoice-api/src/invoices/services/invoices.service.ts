@@ -17,7 +17,10 @@ export class InvoicesService {
   }
 
   findAllPending() {
-    return this.invoicesRepo.find({ where: { status: 'pending' } });
+    return this.invoicesRepo.find({
+      where: { status: 'pending' },
+      order: { id: 'DESC' },
+    });
   }
 
   findOne(id: number) {

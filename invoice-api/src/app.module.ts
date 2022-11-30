@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { InvoicesModule } from './invoices/invoices.module';
+import { SocketModule } from './socket/socket.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { InvoicesModule } from './invoices/invoices.module';
       retryAttempts: 10,
     }),
 
+    SocketModule,
     InvoicesModule,
   ],
   controllers: [],
