@@ -42,3 +42,8 @@ As a member of the 2ULaundry Accounting Team I need to see a list of invoices th
 3. Create a solution that allows the user to select and approve invoices. Once an invoice is "Approved" it should dissappear from the list of available invoices.
 4. When the user approves an invoice the "status" property for that invoice should be updated to "Approved"
 5. When an invoice is submitted via the API from user story #1, it should populate in the list of displayed invoices without requiring the user to manually refresh the list of invoices.
+
+
+
+### Final Results
+[Grabación de pantalla desde 2022-11-30 16-45-39.webm](https://user-images.githubusercontent.com/16145739/204915115-08c6ab86-6173-4508-8a37-76f28469686b.webm)
