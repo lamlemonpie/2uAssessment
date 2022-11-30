@@ -47,5 +47,6 @@ As a member of the 2ULaundry Accounting Team I need to see a list of invoices th
 
 ### Final Results
 
-[Grabación de pantalla desde 2022-11-30 16-55-19.webm](https://user-images.githubusercontent.com/16145739/204916960-8d44076f-a3f1-47e6-9ac4-ae4ae7c14a49.webm)
+[Grabación de pantalla desde 2022-11-30 17-39-16.webm](https://user-images.githubusercontent.com/16145739/204923741-04fa8156-b253-4d3a-80ee-5d240e20ae5a.webm)
+
 
