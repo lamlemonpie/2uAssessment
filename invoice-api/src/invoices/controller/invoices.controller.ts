@@ -16,7 +16,7 @@ import { InvoicesService } from '../services/invoices.service';
 export class InvoicesController {
   constructor(private invoicesService: InvoicesService) {}
 
-  @Get('/')
+  @Get('/pending')
   findAllPending() {
     return this.invoicesService.findAllPending();
   }

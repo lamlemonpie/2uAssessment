@@ -17,7 +17,6 @@ export const useQuery = () => {
     (promise: Promise<any>, callback: (data: any) => void) => {
       promise
         .then((data) => {
-          console.log("Request ended succesfully", data);
           callback(data);
         })
         .catch((error) => {
