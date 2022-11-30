@@ -12,7 +12,7 @@ import { UpdateInvoiceDto } from '../dtos/update-invoice.dto';
 
 import { InvoicesService } from '../services/invoices.service';
 
-@Controller('invoices')
+@Controller('invoice')
 export class InvoicesController {
   constructor(private invoicesService: InvoicesService) {}
 
